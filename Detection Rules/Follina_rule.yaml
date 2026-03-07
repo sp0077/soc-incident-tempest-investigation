@@ -1,0 +1,16 @@
+title: Follina Exploit Detection
+id: follina-msdt-execution
+status: experimental
+
+logsource:
+  product: windows
+  service: sysmon
+
+detection:
+  selection:
+    Image|endswith: '\msdt.exe'
+    CommandLine|contains: 'ms-msdt'
+
+condition: selection
+
+level: high
